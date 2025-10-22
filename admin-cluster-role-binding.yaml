@@ -9,4 +9,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: admin-service-account
-  namespace: upstart-web-prod-debug
+  namespace: upstart-web-staging-1-debug

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-busybox-deployment
-  namespace: upstart-web-prod-debug
+  namespace: upstart-web-staging-1-debug
   labels:
     app: admin-busybox
 spec:
