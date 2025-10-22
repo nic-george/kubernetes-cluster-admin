@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: upstart-web-prod-debug
+resources:
+  - admin-cluster-role.yaml
+  - admin-service-account.yaml
+  - admin-cluster-role-binding.yaml
+  - admin-deployment.yaml
+

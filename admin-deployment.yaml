@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-busybox-deployment
+  namespace: upstart-web-prod-debug
+  labels:
+    app: admin-busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-busybox
+  template:
+    metadata:
+      labels:
+        app: admin-busybox
+    spec:
+      serviceAccountName: admin-service-account
+      containers:
+      - name: busybox-container
+        image: busybox:latest
+        command: ["sleep", "14400"]  # 4 hours = 14400 seconds
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "25m"
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+      restartPolicy: Always
